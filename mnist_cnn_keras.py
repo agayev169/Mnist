@@ -15,14 +15,14 @@ x_test = tf.reshape(x_test, shape = [-1, 28, 28, 1])
 
 model = Sequential()
 
-model.add(Conv2D(1, (2, 2), input_shape = (28, 28, 1)))
+model.add(Conv2D(32, (2, 2), input_shape = (28, 28, 1)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size = (2, 2)))
 
-# model.add(Conv2D(32, (2, 2)))
-# model.add(Activation('relu'))
-# model.add(MaxPooling2D(pool_size = (2, 2)))
-# model.add(Dropout(0.1))
+model.add(Conv2D(32, (2, 2)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size = (2, 2)))
+model.add(Dropout(0.1))
 
 model.add(Flatten())
 model.add(Dense(512))
